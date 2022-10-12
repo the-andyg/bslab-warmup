@@ -1,5 +1,5 @@
 BIN= helloworld
-OBJS = helloworld.o printhelloworld.o
+OBJS = helloworld.o printhelloworld.o test.o
 
 $(BIN): $(OBJS)
 	g++ $^ -o $@
