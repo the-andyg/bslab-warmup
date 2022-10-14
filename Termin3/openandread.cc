@@ -7,18 +7,14 @@
 
 void read() {
 
-    FILE *d = fopen("loreipsum.txt", O_RDONLY);
-    std::cout << d << std::endl;
-    fseek(d, 0, SEEK_END);
-    long c = ftell(d);
-    fseek(d, 0, SEEK_END);
+    int d = open("loreipsum.txt", O_RDONLY);
 
-    char *buf = new char(c + 1);
-    fread(buf, c, 1, d);
+    int count = 99;
+    char *buf = new char(count + 1);
+    int ret = read(d, buf, count);
 
-    fclose(d);
-    std::cout << d << std::endl;
-    buf[c] = 0;
+    d = close(d);
+    buf[ret] = 0;
     std::cout << buf << std::endl;
 
 }
